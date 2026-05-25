@@ -356,6 +356,154 @@ footer{padding:1.3rem 3rem;border-top:1px solid rgba(255,255,255,.04);display:fl
 
 /* PARTICLE CANVAS */
 #particles{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.4;}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+/* Hamburger menu */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 700;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--yel);
+  transition: all 0.3s ease;
+}
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  #hero { grid-template-columns: 1fr 1fr; padding: 5rem 2rem 2rem; gap: 1.5rem; }
+  .proj-g { grid-template-columns: repeat(2, 1fr); }
+  .skills-g { grid-template-columns: repeat(2, 1fr); }
+  .about-g { gap: 2.5rem; }
+  .roles-g { grid-template-columns: repeat(2, 1fr); }
+  .cert-g { grid-template-columns: repeat(2, 1fr); }
+  section { padding: 4rem 2rem; }
+  nav { padding: 1rem 2rem; }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  /* NAV */
+  nav { padding: 1rem 1.5rem; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10,10,18,0.98);
+    backdrop-filter: blur(20px);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 550;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 1.2rem; letter-spacing: 0.2em; }
+  .nav-hamburger { display: flex; }
+
+  /* HERO */
+  #hero {
+    grid-template-columns: 1fr;
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    gap: 2.5rem;
+  }
+  .hname { font-size: clamp(3rem, 14vw, 5rem); white-space: normal; }
+  .hname .l3 { font-size: 0.62rem; letter-spacing: 0.15em; }
+  .hsub { font-size: 0.65rem; letter-spacing: 0.1em; }
+  .hbtns { justify-content: center; }
+  .stats-bar { justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+  .hright { order: -1; }
+  .iw { width: 220px; height: 290px; margin: 0 auto; }
+  .scroll-h { display: none; }
+
+  /* ABOUT */
+  .about-g { grid-template-columns: 1fr; gap: 2rem; }
+  .acards { grid-template-columns: 1fr 1fr; }
+  .code-b { font-size: 0.62rem; line-height: 1.8; }
+
+  /* INTERESTS */
+  .int-grid { gap: 0.6rem; }
+  .int-tag { font-size: 0.7rem; padding: 0.65rem 1rem; }
+
+  /* SKILLS */
+  .skills-g { grid-template-columns: 1fr; gap: 0.9rem; }
+
+  /* GITHUB */
+  .gh-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* PROJECTS */
+  .proj-g { grid-template-columns: 1fr; gap: 1rem; }
+  .pc { padding: 1.3rem; }
+
+  /* EXPERIENCE */
+  .exp-item { display: block; }
+  .exp-header { flex-direction: column; gap: 0.4rem; }
+  .exp-timeline { padding-left: 1.2rem; }
+
+  /* ACHIEVEMENTS */
+  .ach-g { grid-template-columns: 1fr; }
+  .achc { padding: 1.1rem; }
+
+  /* EDUCATION */
+  .edu-g { grid-template-columns: 1fr; }
+
+  /* ROLES */
+  .roles-g { grid-template-columns: 1fr; }
+
+  /* CERTS */
+  .cert-g { grid-template-columns: 1fr; }
+
+  /* CONTACT */
+  .contact-g { grid-template-columns: 1fr; gap: 1.5rem; }
+  .cta-big { font-size: clamp(2rem, 10vw, 3.5rem); }
+  .clinks { gap: 0.6rem; }
+  .clink { padding: 0.8rem 1rem; }
+
+  /* GENERAL */
+  section { padding: 3.5rem 1.5rem; }
+  .st { font-size: clamp(2rem, 8vw, 3rem); margin-bottom: 1.8rem; }
+  .ey { font-size: 0.62rem; }
+  footer { padding: 1rem 1.5rem; flex-direction: column; gap: 0.4rem; text-align: center; }
+  .ticker-w { height: 32px; }
+  .tk { font-size: 0.85rem; padding: 0 1.2rem; }
+
+  /* FLOAT TAGS */
+  .ft1, .ft2 { display: none; }
+
+  /* HERO buttons */
+  .bp, .bo, .bg2, .br {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Small mobile - 480px */
+@media (max-width: 480px) {
+  .hname { font-size: clamp(2.5rem, 14vw, 4rem); }
+  .iw { width: 180px; height: 240px; }
+  .gh-grid { grid-template-columns: repeat(2, 1fr); }
+  .acards { grid-template-columns: 1fr; }
+  .stats-bar { gap: 1rem; }
+  .sn { font-size: 1.8rem; }
+  .hbtns { flex-direction: column; align-items: center; }
+  .bp, .bo, .bg2, .br { width: 100%; text-align: center; justify-content: center; }
+  nav { padding: 0.9rem 1rem; }
+  .ach-top { flex-direction: column; align-items: flex-start; }
+}
+
 </style>
 </head>
 <body>
@@ -384,6 +532,9 @@ footer{padding:1.3rem 3rem;border-top:1px solid rgba(255,255,255,.04);display:fl
     <li><a href="#roles">Roles</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -401,7 +552,7 @@ footer{padding:1.3rem 3rem;border-top:1px solid rgba(255,255,255,.04);display:fl
     <div class="hbtns">
       <a href="#projects" class="bp">View Projects</a>
       <a href="#contact" class="bo">Contact Me</a>
-      <a href="https://github.com/Akshara0506" target="_blank" class="bg2">
+      <a href="https://github.com/Akshara0506/CivicPulse" target="_blank" class="bg2">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
         GitHub
       </a>
@@ -515,7 +666,7 @@ footer{padding:1.3rem 3rem;border-top:1px solid rgba(255,255,255,.04);display:fl
     <div class="ghc fu d4"><div class="gh-num">4</div><div class="gh-label">Stars Earned</div></div>
   </div>
   <div class="fu">
-    <a href="https://github.com/Akshara0506" target="_blank" class="gh-link">
+    <a href="https://github.com/Akshara0506/CogniSync" target="_blank" class="gh-link">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
       View Full GitHub Profile — github.com/Akshara0506 →
     </a>
@@ -532,25 +683,25 @@ footer{padding:1.3rem 3rem;border-top:1px solid rgba(255,255,255,.04);display:fl
       <div class="pname">CIVICPULSE</div><div class="psub">AI-Powered Complaint Management · Jan 2026</div>
       <p class="pdesc">Civic complaint resolution system with role-based access, ML-based classification achieving <strong style="color:var(--yel)">75–85% accuracy</strong>, and scalable SQL database.</p>
       <ul class="pfeats"><li>ML complaint classification</li><li>Priority tagging engine</li><li>Admin analytics suite</li><li>Role-based access control</li></ul>
-      <a href="https://github.com/Akshara0506" target="_blank" class="plink">GitHub →</a></div>
+      <a href="https://github.com/Akshara0506/Traffic-Accident-Analysis" target="_blank" class="plink">GitHub →</a></div>
     <div class="pc fu d2"><div class="pnum">02</div>
       <div class="ptechs"><span class="pt">Python</span><span class="pt">Flask</span><span class="pt">GenAI</span><span class="pt">SQLite</span></div>
       <div class="pname">COGNISYNC</div><div class="psub">GenAI Rhythm Therapy · Sep 2025</div>
       <p class="pdesc">AI neurorehabilitation for stroke & Parkinson's patients with custom beat-generation engine, adaptive therapy workflows, and clinical dashboards.</p>
       <ul class="pfeats"><li>Custom beat-generation</li><li>Rhythmic modulation</li><li>Progress tracking</li><li>Real-time clinical dashboard</li></ul>
-      <a href="https://github.com/Akshara0506" target="_blank" class="plink">GitHub →</a></div>
+      <a href="https://github.com/Akshara0506/OmniScan" target="_blank" class="plink">GitHub →</a></div>
     <div class="pc fu d3"><div class="pnum">03</div>
       <div class="ptechs"><span class="pt">Python</span><span class="pt">Scikit-learn</span><span class="pt">SQL</span></div>
       <div class="pname">TRAFFIC AI</div><div class="psub">Accident Severity Prediction</div>
       <p class="pdesc">ML project for traffic accident severity prediction using visual analytics, forecasting algorithms, and interactive dashboards.</p>
       <ul class="pfeats"><li>Future accident forecasting</li><li>Severity classification</li><li>Interactive visualizations</li><li>Data pipeline</li></ul>
-      <a href="https://github.com/Akshara0506" target="_blank" class="plink">GitHub →</a></div>
+      <a href="https://github.com/Akshara0506/PhishGuard-AI" target="_blank" class="plink">GitHub →</a></div>
     <div class="pc fu d1"><div class="pnum">04</div>
       <div class="ptechs"><span class="pt">Python</span><span class="pt">NLP</span><span class="pt">BERT</span></div>
       <div class="pname">PHISHGUARD AI</div><div class="psub">Hybrid AI Phishing Detection</div>
       <p class="pdesc">Hybrid AI combining NLP and BERT for real-time phishing and cybersecurity threat detection. Research published in IJMRSET 2025.</p>
       <ul class="pfeats"><li>BERT + TF-IDF NLP</li><li>Real-time threat analysis</li><li>Published research</li></ul>
-      <a href="https://github.com/Akshara0506" target="_blank" class="plink">GitHub →</a></div>
+      <a href="https://github.com/Akshara0506/MarketSentinal-AI" target="_blank" class="plink">GitHub →</a></div>
     <div class="pc fu d2"><div class="pnum">05</div>
       <div class="ptechs"><span class="pt">Python</span><span class="pt">TensorFlow</span><span class="pt">3D CNN</span></div>
       <div class="pname">OMNISCAN</div><div class="psub">Brain Tumor Detection</div>
@@ -878,6 +1029,24 @@ document.querySelectorAll('.gh-num,.sn').forEach(function(el){
     co.observe(el);
   }
 });
+
+// MOBILE NAV
+function toggleNav() {
+  var links = document.querySelector('.nav-links');
+  var burger = document.getElementById('hamburger');
+  links.classList.toggle('open');
+  burger.classList.toggle('open');
+  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+}
+// Close nav on link click
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
 </script>
 </body>
 </html>
